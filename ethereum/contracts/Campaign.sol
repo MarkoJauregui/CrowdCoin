@@ -20,7 +20,7 @@ contract Campaign {
         address recipient;
         bool complete;
         uint256 approvalCount;
-        mapping(address => bool) providers;
+        mapping(address => bool) providers; //aprovals
     }
 
     Request[] public requests;
