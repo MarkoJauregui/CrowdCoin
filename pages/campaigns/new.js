@@ -14,7 +14,7 @@ class CampaignNew extends Component {
 	onSubmit = async (event) => {
 		event.preventDefault();
 
-		this.setState({ loading: true, errorMessage: '' });
+		this.setState({ loading: true, errorMessage: '' }); // gordo es homo
 
 		try {
 			const accounts = await web3.eth.getAccounts();
