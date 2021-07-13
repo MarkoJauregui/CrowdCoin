@@ -20,7 +20,7 @@ contract Campaign {
         address recipient;
         bool complete;
         uint256 approvalCount;
-        mapping(address => bool) providers; //aprovals
+        mapping(address => bool) approvals;
     }
 
     Request[] public requests;
@@ -66,9 +66,9 @@ contract Campaign {
         Request storage request = requests[index];
 
         require(approvers[msg.sender]);
-        require(!request.providers[msg.sender]);
+        require(!request.approvals[msg.sender]);
 
-        request.providers[msg.sender] = true;
+        request.approvals[msg.sender] = true;
         request.approvalCount++;
     }
 
